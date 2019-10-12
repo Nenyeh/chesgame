@@ -1,0 +1,115 @@
+## MATRIX CLASS ASSIGNMENT
+INTTYPE = type(1)
+FLOATTYPE = type(0.0)
+## TODO
+## Implement a helper function to return the dot product of a 1 x n vector and
+## an n x 1 vector - i.e. a row and a column.  They must be the same length,
+## otherwise the function needs to exit without error
+
+
+def dot(vec1, vec2):
+    total = 0
+    for i in range(len(vec1)):
+        total += vec1[i] * vec2[i][0]
+    return total
+
+
+class Matrix():
+    ## Initialize a Matrix object with an input matrix, stored as a list-of-lists.
+
+    def __init__( self, matrix, rows, col):
+        ## TODO
+        ## Implement a class attribute to keep track of the matrix values.
+        ## This attribute just stores the input data.  Be sure to check that
+        ## 'matrix' is a list of lists before setting this value.
+        ## REMINDER: set a class attribute by using 'self.attr_name = value'.
+        self.matrix = matrix
+        self.rows = rows
+        self.col = col
+
+
+        ## TODO
+        ## Implement class attributes to keep track of the number of rows and the
+        ## number of columns.  You can use these to compare dimensions.
+
+
+
+    ## TODO
+    ## Implement helper function that returns the i-th row in the matrix.
+    ## Should return a list of numbers (e.g. a 1 x m matrix).
+    def get_row( self, i ):
+        return self.matrix[i]
+
+
+
+
+
+    ## TODO
+    ## Implement helper function that returns the j-th column in the matrix.
+    ## Should return a list of lists, each of size 1 (e.g. an n x 1 matrix).
+    def get_col( self, j ):
+        result = []
+        for rows in range(len(self.matrix)):
+            result.append([self.matrix[rows][j]])
+        return result
+
+
+
+
+    ## TODO
+    ## Check that the dimensions of self and other are compatible.
+    ## Return a Matrix equal to the sum of self and other.
+    def add( self, other):
+        result = []
+
+        for i in range(self.rows):
+            total = []
+            for j in range(self.col):
+                total.append(self.matrix[i][j] + other.matrix[i][j])
+            result.append(total)
+        return result
+
+    ## TODO
+    ## Check that the dimensions of self and other are compatible.
+    ## Return a Matrix equal to the difference of self and other.
+    def sub(self, other):
+        result = []
+        for i in range(self.rows):
+            total = []
+            for j in range(self.col):
+                total.append(self.matrix[i][j] - other.matrix[i][j])
+            result.append(total)
+        return result
+
+    ## TODO
+    ## First, check whether other is a scalar or a matrix.
+    ## If it is a scalar, return the product other * self.
+    ## If it is a Matrix, return the matrix product of self
+    ## and other.  This is to be accomplished by using the
+    ## dot function defined above.
+    def mult(self, other):
+        total = 0
+        result_matrix = [[]]
+        for i in range(self.rows):
+            for j in range(other.col()):
+                if type(other.col) == INTTYPE:
+                    total += self.matrix * other.matrix
+                else:
+                    pass
+                    ##result +=
+
+
+
+    ## TODO
+    ## Return a Matrix that is the transpose of self.
+
+    def transpose( self ):
+
+        pass
+
+    def main():
+        matrix = Matrix([[1,2,3], [4,5,6]], 2, 3)
+        print(dot)
+
+
+
